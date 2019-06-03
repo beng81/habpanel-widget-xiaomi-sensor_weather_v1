@@ -16,7 +16,6 @@ Thing mihome:sensor_weather_v1:YOUR ID "Xiaomi Temperature Sensor" [itemId="YOUR
 <pre>//Xiaomi Temperature and Humidity Sensor
 Number HT_Temperature "Temperature" <temperature> { channel="mihome:sensor_weather_v1:YOUR ID:temperature" }
 Number HT_Humidity "Humidity" <humidity> { channel="mihome:sensor_weather_v1:YOUR ID:humidity" }
-Number HT_Pressure "Pressure"  { channel="mihome:sensor_weather_v1:YOUR ID:pressure" }
 Number HT_Battery "Battery" <battery> { channel="mihome:sensor_weather_v1:YOUR ID:batteryLevel" }
 Switch HT_BatteryLow "Battery Low" <energy> { channel="mihome:sensor_weather_v1:YOUR ID:lowBattery" }
 </pre>
@@ -25,14 +24,12 @@ Switch HT_BatteryLow "Battery Low" <energy> { channel="mihome:sensor_weather_v1:
 <pre>Frame label="Xiaomi Huidity Sensor" {
 &nbsp;&nbsp;&nbsp;Text item=HT_Temperature label="Temperature [%.1f °C]"
 &nbsp;&nbsp;&nbsp;Text item=HT_Humidity label="Humidity [%.1f %%]" icon="humidity"
-&nbsp;&nbsp;&nbsp;Text item=HT_Pressure label="Pressure [%.1f kPa]" icon="pressure"
 &nbsp;&nbsp;&nbsp;Text item=HT_Battery label="Battery [%s %%]"
 }</pre>
 <br>
 <b>persistence/mysql.persist</b> file:<br>
 <pre>HT_Temperature : strategy = everyChange, everyDay, restoreOnStartup
 HT_Humidity : strategy = everyChange, everyDay, restoreOnStartup
-HT_Pressure : strategy = everyChange, everyDay, restoreOnStartup
 HT_Battery : strategy = everyChange, everyDay, restoreOnStartup</pre>
 
 
